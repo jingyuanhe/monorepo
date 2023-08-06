@@ -1,7 +1,7 @@
 {
   "name": "xwg-cli",
   "private": false,
-  "version": "0.0.17",
+  "version": "0.0.20",
   "description": "A front-end cli for starting your project quickly",
   "type": "commonjs",
   "main": "./bin/cli.js",
@@ -14,7 +14,6 @@
     "dev": "nodemon",
     "build": "rimraf lib && tsc --outDir lib --module CommonJS",
     "lint": "eslint . --ext '.js,.ts' --fix",
-    "prepare": "husky install",
     "commit": "git-cz",
     "changelog": "conventional-changelog -p -i CHANGELOG.md -s"
   },
@@ -47,8 +46,6 @@
     "ora": "^5.4.1"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.5",
-    "@commitlint/config-conventional": "^17.6.5",
     "@types/fs-extra": "^11.0.1",
     "@types/inquirer": "^9.0.3",
     "@types/node": "^20.3.1",
@@ -57,7 +54,6 @@
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^2.2.2",
     "eslint": "^8.42.0",
-    "husky": "^8.0.0",
     "lint-staged": "^13.2.2",
     "nodemon": "^2.0.22",
     "rimraf": "^5.0.1",

@@ -1,6 +1,6 @@
 {
   "name": "monorepo-starter-template",
-  "version": "0.0.26",
+  "version": "0.0.28",
   "packageManager": "pnpm@7.6.0",
   "description": "this is monorepo starter template",
   "keywords": [
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/mistjs/monorepo-starter.git"
   },
   "scripts": {
-    "prepare": "cd .. && husky install monorepo/.husky",
+    "prepare": "husky install",
     "release": "esno ./scripts/release.ts --tag"
   },
   "bugs": {
