@@ -1,7 +1,7 @@
 {
-  "name": "xwg-cli",
+  "name": "haiercash-cli",
   "private": false,
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "A front-end cli for starting your project quickly",
   "type": "commonjs",
   "main": "./bin/cli.js",
@@ -9,7 +9,7 @@
     "xwg": "./bin/cli.js"
   },
   "license": "MY LICENSE",
-  "author": "xiwenge",
+  "author": "jingyuanhe",
   "scripts": {
     "dev": "nodemon",
     "build": "rimraf lib && tsc --outDir lib --module CommonJS",
@@ -35,7 +35,7 @@
     "LICENSE"
   ],
   "keywords": [
-    "xwg cli"
+    "haiercash cli"
   ],
   "dependencies": {
     "chalk": "^4.1.2",
@@ -60,10 +60,6 @@
     "typescript": "^4.9.4",
     "vite": "^4.3.9",
     "vitest": "^0.32.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Redstone-1/xwg-cli.git"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
