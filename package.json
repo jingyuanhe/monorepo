@@ -1,6 +1,6 @@
 {
   "name": "monorepo-starter-template",
-  "version": "0.0.41",
+  "version": "0.0.42",
   "packageManager": "pnpm@7.6.0",
   "description": "this is monorepo starter template",
   "keywords": [
@@ -14,9 +14,13 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "release": "esno ./scripts/release.ts --tag"
+    "release": "esno ./scripts/release.ts --tag",
+    "changeset": "changeset",
+    "update:version": "changeset version",
+    "publish": "changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.2",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
     "@mistjs/eslint-config": "^0.0.2",
