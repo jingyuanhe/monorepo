@@ -182,6 +182,7 @@ const main = async () => {
   try {
     console.log(chalk.magenta("change version ..."));
     for (const selectPkg of selectPkgs) {
+      // 获取更新后的版本信息
       const info = await versionBump({
         release: versionType,
         preid: releaseType,
@@ -192,7 +193,7 @@ const main = async () => {
       // auto generate version file
       await generateVersionFile(info.newVersion, selectPkg.dir);
     }
-    // change global version
+    // 更新root 版本信息
     globalInfo = await versionBump({
       release: versionType,
       preid: releaseType,
@@ -208,6 +209,7 @@ const main = async () => {
   if (selectPkgs.length === 1) {
     const pkg = pkgs[0];
     if (pkg.info) {
+      // 包名称以及版本号
       const tag = `${pkg.name}@${pkg.info.newVersion}`;
       // add tag
       try {
@@ -255,7 +257,7 @@ const main = async () => {
     }
   }
 
-  // generate changelog
+  // 生成变更日志
   try {
     console.log(chalk.magenta("generate changelog ..."));
     for (const selectPkg of selectPkgs) {
