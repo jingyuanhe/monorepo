@@ -1,6 +1,6 @@
 {
   "name": "monorepo-starter-template",
-  "version": "0.0.36",
+  "version": "0.0.41",
   "packageManager": "pnpm@7.6.0",
   "description": "this is monorepo starter template",
   "keywords": [
@@ -9,21 +9,13 @@
   ],
   "license": "MIT",
   "author": {
-    "name": "aibayanyu",
-    "email": "aibayanyu@qq.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mistjs/monorepo-starter.git"
+    "name": "jingyuanhe",
+    "email": "389026847@qq.com"
   },
   "scripts": {
     "prepare": "husky install",
     "release": "esno ./scripts/release.ts --tag"
   },
-  "bugs": {
-    "url": "https://github.com/mistjs/monorepo-starter/issues"
-  },
-  "homepage": "https://github.com/mistjs/monorepo-starter#readme",
   "devDependencies": {
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
