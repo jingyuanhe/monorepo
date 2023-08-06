@@ -1,6 +1,6 @@
 {
   "name": "monorepo-starter-template",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "packageManager": "pnpm@7.6.0",
   "description": "this is monorepo starter template",
   "keywords": [
