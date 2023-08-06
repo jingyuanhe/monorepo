@@ -1,7 +1,7 @@
 {
-  "name": "haiercash-cli",
+  "name": "haiercash-cli-test",
   "private": false,
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "A front-end cli for starting your project quickly",
   "type": "commonjs",
   "main": "./bin/cli.js",
