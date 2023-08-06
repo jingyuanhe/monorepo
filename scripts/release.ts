@@ -24,6 +24,7 @@ const checkPublishError = (str: string) => {
 };
 
 const resolvePkgs = (pkgs: Project[]): Pkg[] => {
+  // 过滤掉root目录下的pkg，并获取到对应的目录地址、名字、package.json地址
   return pkgs
     .filter((item) => item.dir !== process.cwd())
     .map(
@@ -55,12 +56,14 @@ const generateVersionFile = async (version: string, cwd: string) => {
 };
 
 const main = async () => {
+  // 查找所有的packages
   const pkgs = resolvePkgs(await findPkgs(process.cwd()));
+  console.log(pkgs);
   let selectPkgs: Pkg[];
   if (pkgs.length <= 1) {
     selectPkgs = pkgs;
   } else {
-    // select publish pkg
+    // 选择需要发布的package
     const sePkgs = await prompt({
       type: "multiselect",
       name: "selectPkgs",
@@ -77,7 +80,7 @@ const main = async () => {
     console.log();
     process.exit(1);
   }
-
+  // 选择发布版本类型 Major（主版本号）Minor（次版本号）Patch（补丁版本号）
   const { versionType, releaseType } = await prompt([
     {
       type: "select",
@@ -85,35 +88,36 @@ const main = async () => {
       message: "please select release version type",
       choices: [
         {
-          title: "patch",
+          title: "patch", // 补丁
           value: "patch",
         },
         {
-          title: "minor",
+          title: "minor", // 次版本
           value: "minor",
         },
         {
-          title: "major",
+          title: "major", // 主版本
           value: "major",
         },
         {
-          title: "prepatch",
+          title: "prepatch", //预包
           value: "prepatch",
         },
         {
-          title: "preminor",
+          title: "preminor", //未成型
           value: "preminor",
         },
         {
-          title: "premajor",
+          title: "premajor", //主修前
           value: "premajor",
         },
         {
-          title: "prerelease",
+          title: "prerelease", // 预发布版本
           value: "prerelease",
         },
       ],
     },
+    // 选择预发布类型
     {
       type: (prev) => (preIncludes.includes(prev) ? "select" : null),
       name: "releaseType",
@@ -159,6 +163,7 @@ const main = async () => {
 
   // build dist
   try {
+    // 到每个package目录里执行build命令
     console.log(chalk.magenta("build ..."));
     await Promise.all(
       selectPkgs.map((selectPkg) =>
@@ -182,6 +187,7 @@ const main = async () => {
         preid: releaseType,
         cwd: selectPkg.dir,
       });
+      console.log(info);
       selectPkg.info = info;
       // auto generate version file
       await generateVersionFile(info.newVersion, selectPkg.dir);
