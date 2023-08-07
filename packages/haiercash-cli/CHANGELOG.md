@@ -1,4 +1,4 @@
-## [0.0.51](https://github.com/jingyuanhe/monorepo/compare/0.0.32...0.0.51) (2023-08-07)
+## [0.0.52](https://github.com/jingyuanhe/monorepo/compare/0.0.32...0.0.52) (2023-08-07)
 
 
 
