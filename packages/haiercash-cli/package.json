@@ -1,7 +1,7 @@
 {
   "name": "haiercash-cli-test",
   "private": false,
-  "version": "0.0.34",
+  "version": "0.0.42",
   "description": "A front-end cli for starting your project quickly",
   "type": "commonjs",
   "main": "./bin/cli.js",
@@ -19,8 +19,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,ts}": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "config": {
