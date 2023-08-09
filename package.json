@@ -1,6 +1,6 @@
 {
   "name": "monorepo-starter-template",
-  "version": "0.0.61",
+  "version": "0.0.62",
   "packageManager": "pnpm@7.6.0",
   "description": "this is monorepo starter template",
   "keywords": [
@@ -15,7 +15,8 @@
   "scripts": {
     "prepare": "husky install",
     "release": "esno ./scripts/release.ts --tag",
-    "lint": "eslint --fix --ext .js,.tsx,ts packages"
+    "lint": "eslint --fix --ext .js,.tsx,ts packages",
+    "preinstall": "npx only-allow pnpm"
   },
   "config": {
     "commitizen": {
